@@ -28,6 +28,19 @@
 
 ---
 
+## 🔐 安全与隐私说明 (Security & Privacy)
+
+为防止 API 被盗用，请务必阅读以下说明：
+
+1.  **代码安全检查**：本项目源码中 **不包含** 任何真实的 API Key。所有 Key 均通过环境变量或前端动态输入加载。
+2.  **API Key 管理建议**：
+    *   **开发环境**：请在根目录创建 `.env` 文件配置 `REACT_APP_API_KEY`，并确保该文件已加入 `.gitignore`，**切勿** 将包含真实 Key 的代码提交到 GitHub 等公共仓库。
+    *   **生产环境**：若部署到 Vercel/Netlify，请在平台的“Environment Variables”后台配置 Key，不要硬编码在代码中。
+    *   **BYOK 模式 (推荐)**：本应用支持 "Bring Your Own Key"。用户在前端“设置”面板中输入的 Key 仅保存在用户浏览器的 **LocalStorage** 中，**绝不会** 上传至开发者的服务器。
+3.  **防盗刷配置**：建议在 AI 服务商后台（如 Google Cloud Console 或 OpenAI Dashboard）为您的 API Key 设置 **使用额度上限 (Quota)** 和 **HTTP Referrer 来源限制**。
+
+---
+
 ## 🛠️ 部署与安装
 
 本项目是基于 React + TypeScript + Tailwind CSS 构建的纯前端应用。

@@ -449,7 +449,7 @@ const App: React.FC = () => {
             <div 
               className="w-10 h-10 text-white/90 flex items-center justify-center hover:text-white hover:scale-110 transition-all cursor-pointer active:scale-95 duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" 
               onClick={() => setViewMode(ViewMode.Bookshelf)}
-              title="墨香笔耕"
+              title="笔纪"
             >
                {/* Increased logo stroke width */}
                <Feather size={28} strokeWidth={2.5} />

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { AppSettings, AIConfig } from '../types';
-import { Type, Layout, Settings, Palette, Save, Monitor, Bot, Key, Globe, Box } from 'lucide-react';
+import { Type, Layout, Settings, Palette, Save, Monitor, Bot, Key, Globe, Box, Mail, Info } from 'lucide-react';
 
 interface SettingsViewProps {
   settings: AppSettings;
@@ -42,7 +42,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ settings, setSettings }) =>
   };
 
   return (
-    <div className="p-6 space-y-8 h-full overflow-y-auto pb-20">
+    <div className="p-6 space-y-8 h-full overflow-y-auto pb-20 custom-scrollbar">
       
       {/* AI Assistant Configuration */}
       <section className="space-y-4">
@@ -238,6 +238,36 @@ const SettingsView: React.FC<SettingsViewProps> = ({ settings, setSettings }) =>
               <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-all ${settings.autoFormatOnSave ? 'left-6' : 'left-1'}`} />
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* 问题反馈 */}
+      <section className="space-y-4">
+        <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center">
+          <Mail size={14} className="mr-2" />
+          关于与反馈
+        </h3>
+        <div className="bg-gradient-to-br from-gray-50 to-white p-5 rounded-2xl border border-gray-200 shadow-sm flex flex-col space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                  <div className="text-sm font-bold text-gray-800 flex items-center">
+                    <Info size={14} className="mr-1.5 text-amber-500" />
+                    笔纪 Inkflow Studio
+                  </div>
+                  <div className="text-[10px] text-gray-400 mt-1 pl-5">版本 v1.2.0 · 让创作更自由</div>
+              </div>
+              <a 
+                  href="mailto:kingkingaugust@foxmail.com?subject=笔纪App反馈"
+                  className="flex items-center space-x-2 px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-xl transition-all border border-amber-100 hover:border-amber-200 shadow-sm active:scale-95"
+              >
+                  <Mail size={14} />
+                  <span className="text-xs font-bold">邮件反馈</span>
+              </a>
+            </div>
+            <div className="text-[10px] text-gray-400 pl-5 leading-relaxed">
+               遇到 BUG 或有新功能建议？欢迎随时联系我们。<br/>
+               官方邮箱: <span className="font-mono text-gray-600 select-all cursor-text">kingkingaugust@foxmail.com</span>
+            </div>
         </div>
       </section>
     </div>
